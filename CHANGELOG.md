@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **デザイン方針の明確化**: デフォルトは「誰でも使えるモダン・ミニマル」。和テイストは配色のみに留め、装飾要素はPhase 2以降でブロックスタイル/バリエーションとしてOPT-INで提供予定。
+- theme.json パレットを16色→8色に縮小（墨/鈍/灰色/銀鼠/生成り/白練/朱/藍）。和由来の色名を残しつつ、ブログ用途に十分かつ万人向けのミニマム構成へ。
+- デフォルト見出しフォントを 明朝 → **ゴシック** に変更。明朝は選択肢として利用可能。
+- `settings.custom.decoration` を `settings.custom.wa-mode` にリネームし、OPT-IN前提を明示。
+
 ## [0.1.0] - 2026-04-20
 
 ### Added
