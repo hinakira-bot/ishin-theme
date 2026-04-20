@@ -1,0 +1,123 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"layout": {
+			"contentSize": "720px",
+			"wideSize": "1120px"
+		},
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "sumi",       "color": "#1a1a1a", "name": "墨 (sumi)" },
+				{ "slug": "nibi",       "color": "#595959", "name": "鈍 (nibi)" },
+				{ "slug": "haiiro",     "color": "#9a9a9a", "name": "灰色 (haiiro)" },
+				{ "slug": "ginnezu",    "color": "#cfcdc8", "name": "銀鼠 (ginnezu)" },
+				{ "slug": "kinari",     "color": "#f5f1e8", "name": "生成り (kinari)" },
+				{ "slug": "shironeri",  "color": "#fbf9f4", "name": "白練 (shironeri)" },
+				{ "slug": "shu",        "color": "#c72e2e", "name": "朱 (shu)" },
+				{ "slug": "shu-fuka",   "color": "#9b2424", "name": "深朱 (shu-fuka)" },
+				{ "slug": "akane",      "color": "#b7282e", "name": "茜 (akane)" },
+				{ "slug": "kon",        "color": "#1a2b4a", "name": "紺 (kon)" },
+				{ "slug": "ai",         "color": "#3b5c7a", "name": "藍 (ai)" },
+				{ "slug": "hanada",     "color": "#4e7aa8", "name": "縹 (hanada)" },
+				{ "slug": "matsu",      "color": "#2f5d50", "name": "松葉 (matsu)" },
+				{ "slug": "wakamidori", "color": "#6fa86b", "name": "若緑 (wakamidori)" },
+				{ "slug": "yamabuki",   "color": "#d4a437", "name": "山吹 (yamabuki)" },
+				{ "slug": "kincha",     "color": "#a37d3b", "name": "金茶 (kincha)" }
+			],
+			"duotone": [
+				{ "slug": "sumi-kinari", "colors": ["#1a1a1a", "#f5f1e8"], "name": "墨×生成り" },
+				{ "slug": "kon-shironeri","colors": ["#1a2b4a", "#fbf9f4"], "name": "紺×白練" }
+			]
+		},
+		"typography": {
+			"fluid": true,
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "'Noto Serif JP', 'Yu Mincho', 'Hiragino Mincho ProN', serif",
+					"slug": "mincho",
+					"name": "明朝 (mincho)"
+				},
+				{
+					"fontFamily": "'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif",
+					"slug": "gothic",
+					"name": "ゴシック (gothic)"
+				},
+				{
+					"fontFamily": "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace",
+					"slug": "mono",
+					"name": "等幅 (mono)"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "xs",     "size": "0.8125rem", "name": "XS",    "fluid": false },
+				{ "slug": "sm",     "size": "0.875rem",  "name": "小",    "fluid": { "min": "0.8125rem", "max": "0.9375rem" } },
+				{ "slug": "md",     "size": "1rem",      "name": "中",    "fluid": { "min": "0.9375rem", "max": "1.0625rem" } },
+				{ "slug": "lg",     "size": "1.25rem",   "name": "大",    "fluid": { "min": "1.125rem",  "max": "1.375rem" } },
+				{ "slug": "xl",     "size": "1.5rem",    "name": "XL",    "fluid": { "min": "1.375rem",  "max": "1.75rem" } },
+				{ "slug": "2xl",    "size": "2rem",      "name": "2XL",   "fluid": { "min": "1.75rem",   "max": "2.375rem" } },
+				{ "slug": "3xl",    "size": "2.5rem",    "name": "3XL",   "fluid": { "min": "2rem",      "max": "3rem" } }
+			]
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"units": ["px", "em", "rem", "%", "vw", "vh"],
+			"spacingSizes": [
+				{ "slug": "10", "size": "0.5rem", "name": "XS" },
+				{ "slug": "20", "size": "0.75rem","name": "S" },
+				{ "slug": "30", "size": "1rem",   "name": "M" },
+				{ "slug": "40", "size": "1.5rem", "name": "L" },
+				{ "slug": "50", "size": "2rem",   "name": "XL" },
+				{ "slug": "60", "size": "3rem",   "name": "2XL" },
+				{ "slug": "70", "size": "4rem",   "name": "3XL" }
+			]
+		},
+		"custom": {
+			"decoration": {
+				"enabled": true,
+				"description": "和風装飾のON/OFF制御。カスタマイザーから切替可能"
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--shironeri)",
+			"text": "var(--wp--preset--color--sumi)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--gothic)",
+			"fontSize": "var(--wp--preset--font-size--md)",
+			"lineHeight": "1.8"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--mincho)",
+					"fontWeight": "600",
+					"lineHeight": "1.4"
+				}
+			},
+			"h1": { "typography": { "fontSize": "var(--wp--preset--font-size--3xl)" } },
+			"h2": { "typography": { "fontSize": "var(--wp--preset--font-size--2xl)" } },
+			"h3": { "typography": { "fontSize": "var(--wp--preset--font-size--xl)" } },
+			"h4": { "typography": { "fontSize": "var(--wp--preset--font-size--lg)" } },
+			"link": {
+				"color": { "text": "var(--wp--preset--color--akane)" },
+				":hover": { "color": { "text": "var(--wp--preset--color--shu-fuka)" } }
+			}
+		},
+		"spacing": {
+			"blockGap": "var(--wp--preset--spacing--40)",
+			"padding": {
+				"top": "0",
+				"right": "var(--wp--preset--spacing--30)",
+				"bottom": "0",
+				"left": "var(--wp--preset--spacing--30)"
+			}
+		}
+	}
+}

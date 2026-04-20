@@ -1,0 +1,16 @@
+parameters:
+    level: 8
+    paths:
+        - src/
+        - functions.php
+    scanFiles:
+        - index.php
+    bootstrapFiles:
+        - phpstan-bootstrap.php
+    excludePaths:
+        - vendor/*
+        - node_modules/*
+        - build/*
+    ignoreErrors:
+        # WP constants defined in functions.php at runtime
+        - '#Constant ISHIN_(VERSION|MIN_PHP|MIN_WP|DIR|URI) not found\.#'
