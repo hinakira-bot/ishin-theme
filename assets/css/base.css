@@ -1,0 +1,97 @@
+/**
+ * ISHIN Theme — 基本補足CSS
+ *
+ * theme.json だけでは表現しにくい部分のみを最小限で補う。
+ * 原則は theme.json 側で制御。
+ */
+
+/* スムーススクロール (アクセシビリティ: prefers-reduced-motion を尊重) */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/* セクションのタップ領域を広げる (モバイル) */
+@media (max-width: 600px) {
+	.wp-block-button__link {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+	}
+}
+
+/* 投稿内画像の最大幅制御 (記事内で wide/full を使わない通常画像) */
+.entry-content > img,
+.wp-block-post-content > img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* フォーカスリング: デフォルトより視認性高く */
+:where(a, button, input, textarea, select):focus-visible {
+	outline: 2px solid var(--wp--preset--color--ai);
+	outline-offset: 2px;
+}
+
+/* 引用ブロック: 和テイストの控えめな装飾 */
+.wp-block-quote {
+	border-left: 3px solid var(--wp--preset--color--ginnezu);
+	padding-left: var(--wp--preset--spacing--30);
+	font-style: normal;
+	color: var(--wp--preset--color--nibi);
+}
+
+/* コードブロック */
+.wp-block-code {
+	background-color: var(--wp--preset--color--kinari);
+	border: 1px solid var(--wp--preset--color--ginnezu);
+	border-radius: 4px;
+	padding: var(--wp--preset--spacing--30);
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: var(--wp--preset--font-size--sm);
+	overflow-x: auto;
+}
+
+/* インラインコード */
+:where(p, li, h1, h2, h3, h4, h5, h6) code {
+	background-color: var(--wp--preset--color--kinari);
+	padding: 0.15em 0.4em;
+	border-radius: 3px;
+	font-family: var(--wp--preset--font-family--mono);
+	font-size: 0.9em;
+}
+
+/* 区切り線: is-style-wide */
+.wp-block-separator.is-style-wide {
+	border-top: 1px solid var(--wp--preset--color--ginnezu);
+}
+
+/* テーブル: 読みやすさ強化 */
+.wp-block-table table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.wp-block-table th,
+.wp-block-table td {
+	border: 1px solid var(--wp--preset--color--ginnezu);
+	padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+}
+.wp-block-table thead th {
+	background-color: var(--wp--preset--color--kinari);
+	font-weight: 600;
+}
+
+/* スクリーンリーダー専用テキスト */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}

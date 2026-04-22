@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * テーマ定数
  */
-define( 'ISHIN_VERSION', '0.1.0' );
+define( 'ISHIN_VERSION', '0.2.0' );
 define( 'ISHIN_MIN_PHP', '8.1.0' );
 define( 'ISHIN_MIN_WP', '6.1.0' );
 define( 'ISHIN_DIR', get_template_directory() );
@@ -76,8 +76,33 @@ add_action( 'after_setup_theme', static function (): void {
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'appearance-tools' );
 
-	// エディタースタイル (Phase 1で追加予定)
-	// add_editor_style( 'assets/css/editor.css' );
+	// エディタースタイル
+	add_editor_style( 'assets/css/base.css' );
+} );
+
+/**
+ * フロント側のCSS enqueue
+ */
+add_action( 'wp_enqueue_scripts', static function (): void {
+	wp_enqueue_style(
+		'ishin-base',
+		ISHIN_URI . '/assets/css/base.css',
+		[],
+		ISHIN_VERSION
+	);
+} );
+
+/**
+ * ブロックパターンカテゴリの追加
+ */
+add_action( 'init', static function (): void {
+	if ( ! function_exists( 'register_block_pattern_category' ) ) {
+		return;
+	}
+	register_block_pattern_category(
+		'ishin',
+		[ 'label' => __( 'ISHIN', 'ishin' ) ]
+	);
 } );
 
 /**
